@@ -15,18 +15,4 @@ root.render(
   </React.StrictMode>
 );
 
-// function renderDOM(content, id) {
-//   ReactDOM.render(content, document.getElementById(id))
-  
-// }
-
-// const element = <div style={{color:"black"}}>
-//   <Navigasi/>
-//   <Container className='Container'>
-//   <h1>Bootcamp WGS Batch 3</h1>
-//   <h2>Ronatio Parhorasan Silaban</h2>
-//   </Container>
-//   </div>;
-
-
 // renderDOM(element,"root")
