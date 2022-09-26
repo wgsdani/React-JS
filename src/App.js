@@ -1,32 +1,34 @@
-import './App.css';
-import { faker } from "@faker-js/faker";
+// Parent Component
 
-function App() {
-  const date = new Date();
-  const data = [
-    {
-      name : "Dani Mulyana",
-      date : date.toLocaleDateString(),
-      comment : "Halooo",
-      avatar: faker.image.avatar()
-    },
-    {
-      name : "Ronatio Silaban",
-      date : date.toLocaleDateString(),
-      comment : " Hiii",
-      avatar: faker.image.avatar()
-    },
-    {
-      name : "Ramdhani Arya",
-      date : date.toLocaleDateString(),
-      comment : "Hawaiii uu",
-      avatar: faker.image.avatar()
-    }
-  ];
-  return (
+import React from 'react';
+import data from './Data';
+import Comment from './components/Comment';
+
+
+//  Function
+
+// function App () {
+//     // const [likes, setLikes] = useState (0)
+//     return (
+//       <div className='ui container comments'>
+//          {
+//             data.map((item, index) => (
+//               <Comment key={index} item={item}/>
+//            ))
+//           }
+//          </div>
+//     );
+//   };
+
+
+
+// Class Component
+class App extends React.Component {
+  render () {
+    return (
       <div className='ui container comments'>
          {
-            data?.map((item, index) => (
+            this.props.data?.map((item, index) => (
         <div className='comment' key={index}>
           <a href='/' className='avatar'>
             <img alt='avatar' src={item.avatar}/>
@@ -36,7 +38,7 @@ function App() {
              {item.name}
             </a>
             <div className='metadata'>
-              <span className='date'>{item.date}</span>
+              <span className='date'>Today, {item.date}</span>
             </div>
             <div className='text'>{item.comment}</div>
           </div>
@@ -45,29 +47,8 @@ function App() {
           }
          </div>
     );
-  };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+};
 
 
 

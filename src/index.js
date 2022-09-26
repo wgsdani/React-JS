@@ -1,16 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Navbar from "./component/Navigasi";
-import "bootstrap/dist/css/bootstrap.min.css";
-// import './index.css';
+import ReactDOM from 'react-dom/client';
 import App from "./App"
+import data from './Data';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar/>
     <App/>
-
+    <App data= {data}/>
   </React.StrictMode>
 );
