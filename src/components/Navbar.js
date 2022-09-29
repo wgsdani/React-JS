@@ -6,6 +6,7 @@ import "./Clock.css"
 import Form from "./Form";
 import Comment from "./Comment";
 import data from "../Data";
+import UnsplashSearch from "./UnsplashSearch";
 
 class Navbar extends Component {
     constructor (props) {

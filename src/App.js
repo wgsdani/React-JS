@@ -6,26 +6,51 @@ import Comment from './components/Comment';
 import Navbar from "./components/Navbar";
 import Clock from "./components/Clock";
 import Form from './components/Form';
+import UnsplashSearch from './components/UnsplashSearch';
+import UnsplashList from "./components/UnsplashList";
+import unsplash from './services/UnsplashService'
 
+// get image from api unsplash
+class App extends React.Component {
+  state = {images: []}
 
-//  Function
-
-function App () {
-    // const [likes, setLikes] = useState (0)
+  onSearchSubmit = async (term) => {
+    const response = await unsplash.get ("/search/photos", {
+      params: {query: term},
+    });
+    this.setState ({ images: response.data.results});
+    console.log(response.data.results);
+  }
+  render () {
     return (
-      
-      <>
-        <Navbar/>
-        <Clock />
-        {/* <Form />
-         {
-            data.map((item, index) => (
-              <Comment key={index} item={item}/>
-           ))
-          } */}
-         </>
+      <div className='ui container' style={{marginTop: "10px"}}>
+         <Navbar/>
+         <Clock />
+        <UnsplashSearch onSubmit = {this.onSearchSubmit} />
+        <UnsplashList images = {this.state.images} />
+      </div>
     );
-  };
+  }
+}
+
+// //  Function
+
+// function App () {
+//     // const [likes, setLikes] = useState (0)
+//     return (
+      
+//       <>
+//         <Navbar/>
+//         <Clock />
+//         {/* <Form />
+//          {
+//             data.map((item, index) => (
+//               <Comment key={index} item={item}/>
+//            ))
+//           } */}
+//          </>
+//     );
+//   };
 
 
 

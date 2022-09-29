@@ -7,7 +7,7 @@ class Time extends Component{
         return (
             <div className="Time">
                 <div className="time">
-                <Clock format={'hh:mm:ss A'} ticking={true} timezone={'Indonesian'} />
+                <Clock format={'hh:mm:ss A'} ticking={true} timezone={'Asia/Jakarta'} />
                 </div>
             </div>
         )
