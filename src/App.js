@@ -3,6 +3,9 @@
 import React from 'react';
 import data from './Data';
 import Comment from './components/Comment';
+import Navbar from "./components/Navbar";
+import Clock from "./components/Clock";
+import Form from './components/Form';
 
 
 //  Function
@@ -10,13 +13,17 @@ import Comment from './components/Comment';
 function App () {
     // const [likes, setLikes] = useState (0)
     return (
-      <div className='ui container comments'>
+      
+      <>
+        <Navbar/>
+        <Clock />
+        {/* <Form />
          {
             data.map((item, index) => (
               <Comment key={index} item={item}/>
            ))
-          }
-         </div>
+          } */}
+         </>
     );
   };
 

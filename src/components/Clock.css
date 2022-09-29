@@ -1,0 +1,55 @@
+.navbar {
+    font-size: 52px;
+    background: #fff;
+    color: black;
+}
+
+.toggleContent {
+    font-size: 20 px;
+}
+
+.toggle.ant-switch {
+    float : right;
+    margin-top: 2em;
+    margin-right: 2em;
+}
+
+.time { 
+    opacity: 50%;
+    -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+    font-size: 45px;
+    width: 292px;
+    height: 292px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #9581f4, #23A6D5, #23D5AB);
+    animation: gradient 10s ease infinite;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px black;
+    margin: auto;
+    position: fixed;
+    top: 44%;
+    left: 42%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+
+@keyframes time {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+time {
+    size: .8em;
+    position: fixed;
+    top: 44%;
+    left: 43.5%;
+    margin-top: 50px;
+    margin-left: -50px;
+}
