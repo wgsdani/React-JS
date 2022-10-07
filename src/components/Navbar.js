@@ -24,7 +24,7 @@ class Navbar extends Component {
     render (){
         return (
         <div className="navbar">
-            <div className="navchild" style={{background : 'lightgrey', margin :'20px'}}>
+            <div className="navchild" style={{background : 'lightgrey', margin :'10px'}}>
             React App
             <Switch onClick={ this.toggleSwitch } className = "toggle"/>
             </div>
