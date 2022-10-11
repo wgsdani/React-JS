@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch,useSelector } from "react-redux";
+import FinalForm from "./components/Form/finalForm";
+
 
 const App =()=> {
   const count = useSelector(state => state.count)
@@ -24,6 +26,7 @@ const App =()=> {
 
     return (
       <div className="App mt-5">
+        <FinalForm />
         <button onClick={increment} className="btn btn-success mr-5">
           Increment
         </button>
