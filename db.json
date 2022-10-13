@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "stooge": "Front-End",
+      "employed": true,
+      "firstName": "Dani",
+      "lastName": "Mulyana",
+      "favoriteColor": "#ff0000",
+      "Expertise": [
+        "HTML"
+      ],
+      "notes": "dm123",
+      "id": 1
+    }
+  ]
+}

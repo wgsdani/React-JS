@@ -1,14 +1,38 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { render } from "react-dom";
 import Styles from "./Style";
 import { Form, Field } from "react-final-form";
+import { useDispatch } from "react-redux";
+import { JsonServer } from "../../apisRedux/fetchJsonServer";
+// import { finalForm } from "../../actionRedux";
 
 const FinalForm = () => {
+  const dispatch = useDispatch()
+  const [posts, setPosts] = useState ([]);
+
+  useEffect (() => {
+    const fetchPosts = async () => {
+      let response = await JsonServer.get ('/posts');
+      setPosts(response.data);
+    };
+    fetchPosts();
+  }, []);
+
+  const finalForm = async (data) => {
+   
+    dispatch({ type: 'SUBMIT_FORM', payload: data });
+  }
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const onSubmit = async (values) => {
     await sleep(300);
+    finalForm(values)
+    const fetchPosts = async () => {
+      let response = await JsonServer.post('/posts', values);
+      setPosts(response.data);
+    }
+    fetchPosts()
     window.alert(JSON.stringify(values, 0, 2));
   };
 

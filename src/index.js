@@ -30,13 +30,22 @@ import "./App.css"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { legacy_createStore as createStore
+  //  applyMiddleware 
+  } from 'redux';
+// import thunk from 'redux-thunk';
+import { composeWithDevTools } from "redux-devtools-extension";
 
 import App from './App'
-import reducers from './reducers';
+import reducers from './reducers/index';
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(
+  reducers,
+  //  applyMiddleware(thunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__() &&
+    composeWithDevTools()
+  );
 //
 ReactDOM.render(
   <Provider store={store}>
